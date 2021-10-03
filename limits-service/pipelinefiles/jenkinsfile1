@@ -1,8 +1,18 @@
 pipeline {
     agent {
-        docker {
-            image 'docker'
-        }
+        kubernetes {
+      yaml '''
+        apiVersion: v1
+        kind: Pod
+        spec:
+          containers:
+          - name: maven
+            image: docker
+            command:
+            - cat
+            tty: true
+        '''
+    }
       }
     stages {
         stage('Build') { 
