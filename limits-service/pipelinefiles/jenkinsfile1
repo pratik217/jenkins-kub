@@ -19,6 +19,8 @@ pipeline {
             steps {
                 container('dockerpod') {
                    sh 'docker -v'
+                   sh 'apt-get update'
+                   sh 'apt-get install --reinstall systemd'
                    sh 'service docker start'
                    sh 'docker build -t java2 -f limits-service/dockerfiles/dockerfile .'  
             }
