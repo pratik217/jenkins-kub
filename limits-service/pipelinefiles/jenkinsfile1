@@ -9,12 +9,12 @@ pipeline {
         stage('Tag and Upload ') { 
             steps {
                 sh 'docker tag java2 kpratik217/jenkins-kub:1'
-                sh 'docker push kpratik217/jenkins-kub:1'
+                
             }
         }
         stage('Deploy') { 
             steps {
-                // 
+                sh 'docker push kpratik217/jenkins-kub:1'
             }
         }
     }
