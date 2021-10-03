@@ -6,7 +6,7 @@ pipeline {
         kind: Pod
         spec:
           containers:
-          - name: docker pod
+          - name: dockerpod
             image: docker
             command:
             - cat
@@ -17,7 +17,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                container('docker pod') {
+                container('dockerpod') {
                    sh 'docker -v'
                    sh 'systemctl enable docker.service' 
                    sh 'docker build -t java2 dockerfile'  
