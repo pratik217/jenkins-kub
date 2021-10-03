@@ -19,7 +19,6 @@ pipeline {
             steps {
                 container('dockerpod') {
                    sh 'docker -v'
-                   sh 'systemctl enable docker.service' 
                    sh 'docker build -t java2 dockerfile'  
             }
             }
