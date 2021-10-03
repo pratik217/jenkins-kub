@@ -1,0 +1,21 @@
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+               sh 'docker build -t java2 dockerfile'  
+            }
+        }
+        stage('Tag and Upload ') { 
+            steps {
+                sh 'docker tag java2 kpratik217/jenkins-kub:1'
+                sh 'docker push kpratik217/jenkins-kub:1'
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                // 
+            }
+        }
+    }
+}
