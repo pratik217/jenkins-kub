@@ -6,7 +6,7 @@ pipeline {
         kind: Pod
         spec:
           containers:
-          - name: maven
+          - name: docker pod
             image: docker
             command:
             - cat
@@ -17,9 +17,11 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-               sh 'docker -v'
-               sh 'systemctl enable docker.service' 
-               sh 'docker build -t java2 dockerfile'  
+                container('docker pod') {
+                   sh 'docker -v'
+                   sh 'systemctl enable docker.service' 
+                   sh 'docker build -t java2 dockerfile'  
+            }
             }
         }
         stage('Tag and Upload ') { 
