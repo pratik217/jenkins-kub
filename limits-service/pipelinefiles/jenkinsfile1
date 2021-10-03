@@ -19,7 +19,7 @@ pipeline {
             steps {
                 container('dockerpod') {
                    sh 'docker -v'
-                   sh 'docker build -t java2 dockerfile'  
+                   sh 'docker build -t java2 limits-service/dockerfiles/dockerfile'  
             }
             }
         }
