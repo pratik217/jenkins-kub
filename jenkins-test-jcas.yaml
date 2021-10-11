@@ -1,0 +1,10 @@
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+        - usernamePassword:
+            scope:    GLOBAL
+            id:       user
+            username: jenkins
+            password: admin
+            description: github username/password
