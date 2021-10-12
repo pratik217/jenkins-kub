@@ -4,7 +4,7 @@ from cassandra.auth import PlainTextAuthProvider
 cloud_config= {
         'secure_connect_bundle': 'secure-connect-prat-bbl-sl-poc1.zip'
 }
-auth_provider = PlainTextAuthProvider('<<CLIENT ID>>', '<<CLIENT SECRET>>')
+auth_provider = PlainTextAuthProvider('LogFMFeiXJcWxzKdoGwTmFbv', 'R2XvFPkDxwa+LGsytS2kl8Z_gQ+GbAav,rc61cwJGw9-sDSy.6TZYnBvQ3OHDO+TP4X--XsA0gT347t_-AzOZYRYOXi8nXpt-l5mTPcUzpmAN3vkPAhHvY8hOHchX_NA')
 cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider)
 session = cluster.connect()
 
